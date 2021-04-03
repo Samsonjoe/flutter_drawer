@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'otherpage.dart';
 
 void main() {
   runApp(new MaterialApp(home: new Application()));
@@ -22,8 +23,16 @@ class Application extends StatelessWidget {
                 new CircleAvatar(backgroundColor: Colors.black26,child: new Text('M'),),
               ],
             ),
-            new ListTile(title: new Text('Page 1'),trailing: new Icon(Icons.arrow_forward),),
-            new ListTile(title: new Text('Page 2'),trailing: new Icon(Icons.arrow_forward),),
+            new ListTile(title: new Text('Page 1'),
+              trailing: new Icon(Icons.arrow_forward),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=>new op('Page 1'))),
+            ),
+
+            new ListTile(title: new Text('Page 2'),
+              trailing: new Icon(Icons.arrow_forward),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=>new op('Page 2'))),
+            ),
+
             new ListTile(title: new Text('Close'),trailing: new Icon(Icons.close),onTap: (){Navigator.pop(context);},),
           ],
         ),
